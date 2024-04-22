@@ -1,0 +1,81 @@
+<!DOCTYPE html >
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SIP.js Demo 1</title>
+    <link rel="stylesheet" type="text/css" href="./demo-1.css">
+</head>
+<body>
+    <h2>Demo prueba llamada</h2>
+  
+    <div>
+      <ol>
+        <li>Conectate al servidor de Websocket</li>
+        <li>Realiza una llamada</li>
+        <li>Colgar llamada</li>
+        <li>Desconectar del servidor</li>
+      </ol>
+    </div>
+  
+    <ol>
+      <li><button id="connect" disabled>servidor de Websocket</button> url <code><span id="server"></span></code></li>
+      <li><button id="call" disabled>llamada </button>con <code><span id="target"></span></code></li>
+      <li><button id="hangup" disabled>colgar llamda</button></li>
+      <li><button id="disconnect" disabled>Desconectar del servior</button></li>
+    </ol>
+  
+    <p>
+      Cuando se establece la llamada, el audio remoto se agrega al siguiente elemento de audio.
+    </p>
+    <audio id="remoteAudio" controls>
+      <p>Your browser doesn't support HTML5 audio.</p>
+    </audio>
+  
+    <p>
+      mientras la llamada esta establecida, se puede enviar DTMF usando el siguiente "teclado"...
+    </p>
+    <div class="dtmf">Enviar DTMF<span id="dtmf"></span></div>
+    <div>
+      <div>
+        <button class="keypad" disabled>1</button>
+        <button class="keypad" disabled>2</button>
+        <button class="keypad" disabled>3</button>
+      </div>
+      <div>
+        <button class="keypad" disabled>4</button>
+        <button class="keypad" disabled>5</button>
+        <button class="keypad" disabled>6</button>
+      </div>
+      <div>
+        <button class="keypad" disabled>7</button>
+        <button class="keypad" disabled>8</button>
+        <button class="keypad" disabled>9</button>
+      </div>
+      <div>
+        <button class="keypad" disabled>*</button>
+        <button class="keypad" disabled>0</button>
+        <button class="keypad" disabled>#</button>
+      </div>
+    </div>
+  
+    <p>
+      mientras la llamada esta establecida, la sesion puede ser puesta en espera o silenciada...
+    </p>
+    <div>
+      <input type="checkbox" id="hold" name="hold" disabled>
+      <label for="hold">En espera</label>
+    </div>
+    <div>
+      <input type="checkbox" id="mute" name="mute" disabled>
+      <label for="mute">Silenciar</label>
+    </div>
+  
+    <script src="../dist/bundle.js"
+      onerror="alert('To run this demo you must first build the library and demo source! See the README.')">
+      </script>
+  </body>
+  
+</body>
+</html>
